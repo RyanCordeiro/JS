@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura de Console JS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/form.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <script>
+       /* var nome = prompt('qual o seu nome ?');
+        var idade = prompt();
+        var cidade = prompt();
+        
+        console.log("o nome é "+ nome);
+        console.log("a idade é "+ idade);
+        console.log("a cidade é r"+ cidade);*/
+
+        
+//--------------- calculadora ------------//
+
+        var i1 = prompt('valor de i1');
+        var sinal = prompt("sinal valido");
+        var i2 = prompt('valor de i2?');
+    
+        i1 = parseInt(i1);
+        i2 = parseInt(i2);
+
+        while(sinal !='+' && sinal !='-' && sinal != '/' && sinal !='*'){
+            alert('insira + ou -')
+            sinal = prompt('sinal')
+        }
+        if(sinal == '+'){
+            r= i1 + i2;
+        }else if (sinal == '-'){
+            r= i1 - i2;
+        }else if (sinal == '*'){
+            r= i1 * i2;
+        }else if (sinal == '/'){
+            r= i1 / i2;
+        }
+
+            r = parseInt(r);
+            alert(r); 
+            
+
+       alert('funcionando');
+
+    </script>
+</body>
