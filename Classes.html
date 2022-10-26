@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>classes
+
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <!--===============================================================================================-->
+</head>
+<script>
+    
+</script>
+<body>
+    <script>
+        /*
+        class animal{
+            constructor(nome){
+                this.nome = nome;
+                this.raca = 'pinthcer';
+            }
+            printNome(){
+                return this.nome;
+               
+            }
+        }
+        Animal = new animal('gato');
+        alert(Animal.printNome());
+        */
+        class animal{
+            constructor(nome){
+                this.nome = nome;
+            }
+            printNome(){
+                return this.nome;
+               
+            }}
+            class Cachorro extends animal{
+                constructor(nome){
+                    super(nome);
+                    this.raça = "bulldog";}
+
+                    printRaça(){
+                        return this.raça;
+                    }
+                }
+            
+            cachorro = new Cachorro("morgana");
+            alert(cachorro.raça);
+
+    </script>
+</body>

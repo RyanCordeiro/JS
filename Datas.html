@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>datas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <script>
+        /*
+        alert(date.getDate());
+        
+        alert(date.getDay());
+        
+        alert(date.getFullYear());
+        
+        alert(date.getHours());
+        */
+
+        /* calcula dias vividos */
+       function vividos(){
+        var date = new Date("10/26/2022");
+        var date2 = new Date("12/08/2002")
+        var diferença = (/* pega a diferença em mileSegundos */date.getTime() - date2.getTime()) / (/* converte para dias*/ 1000 * 3600 * 24);
+        alert(diferença);
+       };
+       //////////////////////////////////////
+
+
+       // calcula quantos dias falta para meu aniversario
+        var aniv = new Date(prompt("informe data do aniversario mm/dd/aa"));
+        var nasc = new Date()
+        var falta = (/* pega a diferença em mileSegundos */aniv.getTime() - nasc.getTime()) / (/* converte para dias*/ 1000 * 3600 * 24);
+        alert(falta);
+
+    </script>
+</body>
