@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>Cursor movimento</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/form.css">
+    <!--===============================================================================================-->
+
+</head>
+
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+<h1> teste <script> print(randomColor);</script></h1>
+<style>
+
+
+.anima{
+    overflow: hidden;
+    transition: 1s !important;
+    margin-top: 500px;
+}
+.desanima{
+    overflow: hidden;
+    margin-top: -500px;
+    transition: 2s !important;
+
+}
+
+</style>
+</body>
+<script>
+    
+    /*var el = elementos[0];
+    el.style.width = "100px";
+    el.style.height = "100px";
+    el.style.borderRadius = "20px";
+    el.style.backgroundColor = 'red';
+    el.style.marginLeft = "200px";
+
+    var el2 = elementos[1]
+    el2.style.width = "100px";
+    el2.style.height = "100px";
+    el2.style.borderRadius = "20px";
+    el2.style.backgroundColor = 'green';
+    el2.style.marginLeft = "200px";
+
+    var el3 = elementos[2]
+    el3.style.width = "100px";
+    el3.style.borderRadius = "20px";
+    el3.style.height = "100px";
+    el3.style.backgroundColor = 'grey';
+    el3.style.marginLeft = "200px";
+
+    var el4 = elementos[3]
+    el4.style.width = "100px";
+    el4.style.height = "100px";
+    el4.style.borderRadius = "20px";
+    el4.style.backgroundColor = 'cyan';
+    el4.style.marginLeft = "200px";*/
+
+var elementos = document.getElementsByClassName('box');
+/////////           loop            ////////
+    for (var i = 0; i < elementos.length; i++){
+        var el = elementos[i];
+
+//////////  varieavies para randomizar cores)   /////////////////////////
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        var randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+        var randomNum = Math.floor(Math.random()*10).toString(16);
+////////    FIM (varieavies para randomizar cores)  /////////////////////////
+
+////////    iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS /////////////
+if(randomColor.length != 6){ 
+    if(randomColor2.length !=6){randomColor2 = randomColor2 + '0';}
+    randomColor = randomColor2 };
+/////////       FIM (iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS) ////////
+
+///////////                     STYLES                  ////////
+        el.style.backgroundColor = ('#' + randomColor );
+        el.style.width = "50px";
+        el.style.height = "50px";
+        el.style.borderRadius = "20px";
+        el.style.display = "inline-block";
+        el.style.marginLeft = "2px";
+////////                     FIM (STYLES)               /////////////
+        
+        document.write(randomColor + '<br> ');
+        document.write(randomColor.length + '<br> ');
+        document.write('numero aleatiro  ' +randomNum + '<br> ');
+    
+/////////        FIM (LOOP)         /////////
+
+/////////                    ANIMAÇÃO               ////////
+
+
+document.querySelectorAll('.box')[i].addEventListener('click',function(){
+
+    for (var i = 0; i < elementos.length; i++){
+        
+      var ani = document.querySelectorAll('.box')[i];
+
+    
+    if(ani.classList.contains('anima')){
+        ani.classList.remove('anima');
+        ani.classList.add('desanima');
+        ani.style.backgroundColor = ('#' + randomColor  );
+    }else{if(ani.classList.contains('desanima')){
+        ani.classList.remove('desanima');}
+        ani.classList.add('anima');
+        ani.style.backgroundColor = ('#' + randomColor  );
+    }};
+})};
+</script>
+
+</html>
