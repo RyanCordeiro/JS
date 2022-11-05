@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>Cursor movimento</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/form.css">
+    <!--===============================================================================================-->
+
+</head>
+
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+<h1> teste <script></script></h1>
+<style>
+
+
+.anima{
+    overflow: hidden;
+    transition: 10ms !important;
+    margin-top: 5px;
+}
+.desanima{
+    overflow: hidden;
+    margin-top: 1px;
+    transition: 10ms !important;
+
+}
+
+</style>
+</body>
+<script>
+    
+    /*var el = elementos[0];
+    el.style.width = "100px";
+    el.style.height = "100px";
+    el.style.borderRadius = "20px";
+    el.style.backgroundColor = 'red';
+    el.style.marginLeft = "200px";
+
+    var el2 = elementos[1]
+    el2.style.width = "100px";
+    el2.style.height = "100px";
+    el2.style.borderRadius = "20px";
+    el2.style.backgroundColor = 'green';
+    el2.style.marginLeft = "200px";
+
+    var el3 = elementos[2]
+    el3.style.width = "100px";
+    el3.style.borderRadius = "20px";
+    el3.style.height = "100px";
+    el3.style.backgroundColor = 'grey';
+    el3.style.marginLeft = "200px";
+
+    var el4 = elementos[3]
+    el4.style.width = "100px";
+    el4.style.height = "100px";
+    el4.style.borderRadius = "20px";
+    el4.style.backgroundColor = 'cyan';
+    el4.style.marginLeft = "200px";*/
+
+var elementos = document.getElementsByClassName('box');
+/////////           loop            ////////
+    for (var i = 0; i < elementos.length; i++){
+        var el = elementos[i];
+
+//////////  varieavies para randomizar cores)   /////////////////////////
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        var randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+        var randomNum = Math.floor(Math.random()*10).toString(16);
+////////    FIM (varieavies para randomizar cores)  /////////////////////////
+
+////////    iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS /////////////
+if(randomColor.length != 6){ 
+    if(randomColor2.length !=6){randomColor2 = randomColor2 + '0';}
+    randomColor = randomColor2 };
+/////////       FIM (iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS) ////////
+
+///////////                     STYLES                  ////////
+
+document.querySelectorAll('.box')[0].addEventListener('click',function(){
+let linhas =[
+/*               0             1               2            3             4             5         */    
+/* 0 */    [ elementos[0],elementos[1],  elementos[2], elementos[3],elementos[4],elementos[5]],
+/* 1 */    [ elementos[6],elementos[7],  elementos[8], elementos[9],elementos[10],elementos[11]],
+/* 2 */    [elementos[12],elementos[13],elementos[14],elementos[15],elementos[16],elementos[18]],
+/* 3 */    [elementos[18],elementos[19],elementos[20],elementos[21],elementos[22],elementos[23]],
+/* 4 */    [elementos[24],elementos[25],elementos[26],elementos[27],elementos[28],elementos[29]],
+/* 5 */    [elementos[30],elementos[31],elementos[32],elementos[33],elementos[34],elementos[35]],
+/* 6 */    [elementos[36],elementos[36],elementos[38],elementos[39],elementos[40],elementos[41]],
+/* 7 */    [elementos[42],elementos[43],elementos[44],elementos[45],elementos[46],elementos[47]],
+/* 8 */    [elementos[48],elementos[49],elementos[50],elementos[51],elementos[52],elementos[53]],
+/* 9 */    [elementos[54],elementos[55],elementos[56],elementos[57],elementos[58],elementos[59]],
+
+];
+
+linhas[0][2].style.backgroundColor = 'gray';
+linhas[0][3].style.backgroundColor = 'gray';
+linhas[1][1].style.backgroundColor = 'gray';
+linhas[1][4].style.backgroundColor = 'gray';
+linhas[2][1].style.backgroundColor = 'gray';
+linhas[2][2].style.backgroundColor = 'gray';
+linhas[2][3].style.backgroundColor = 'gray';
+linhas[3][1].style.backgroundColor = 'gray';
+linhas[3][3].style.backgroundColor = 'gray';
+linhas[4][1].style.backgroundColor = 'gray';
+linhas[4][4].style.backgroundColor = 'gray';
+
+
+    for (var i = 0; i < elementos.length; i++){
+    linha[0][0].style.backgroundColor='black';}
+});
+
+/*
+elementos[2].style.backgroundColor = 'gray';
+
+elementos[3].style.backgroundColor = 'gray';
+
+
+elementos[7].style.backgroundColor = 'gray';
+
+elementos[10].style.backgroundColor = 'gray';
+
+
+elementos[13].style.backgroundColor = 'gray';
+
+elementos[14].style.backgroundColor = 'gray';
+
+elementos[15].style.backgroundColor = 'gray';
+
+
+elementos[19].style.backgroundColor = 'gray';
+
+elementos[21].style.backgroundColor = 'gray';
+
+
+elementos[28].style.backgroundColor = 'gray';
+*/
+
+        el.style.backgroundColor = ('#' + randomColor );
+        el.style.width = "50px";
+        el.style.height = "50px";
+        el.style.borderRadius = "10px";
+        el.style.display = "inline-grid";
+        el.style.columGap = "50px"
+        
+        el.style.marginLeft = "2px";
+////////                     FIM (STYLES)               /////////////
+        
+        document.write(randomColor + '<br> ');
+        document.write(randomColor.length + '<br> ');
+        document.write('numero aleatorio  ' +randomNum + '<br> ');
+    
+/////////        FIM (LOOP)         /////////
+
+/////////                    ANIMAÇÃO               ////////
+
+
+
+
+
+
+
+
+/*
+document.querySelectorAll('.box')[i].addEventListener('click',function(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    var elementos = document.getElementsByClassName('box');
+    for (var i = 0; i < elementos.length; i++){
+        
+      var ani = document.querySelectorAll('.box')[i];
+
+      ani.style.backgroundColor = ('#' + randomColor  );
+    if(ani.classList.contains('anima')){ani.style.backgroundColor = ('#' + randomColor  );
+        ani.classList.remove('anima');
+        ani.classList.add('desanima');
+        
+    }else{if(ani.classList.contains('desanima')){ani.style.backgroundColor = ('#' + randomColor  );
+        ani.classList.remove('desanima');}
+        ani.classList.add('anima');
+        
+    }};
+})*/
+
+//////////// ARAY DENTRO DE ARRAY ///////////
+
+function arr(...numero){
+    console.log(numero[0][1]);
+}
+arr([1,2,3],[1,2,3]);
+
+
+
+};
+</script>
+
+</html>
