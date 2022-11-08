@@ -143,81 +143,28 @@
     const Marcar = () => {
         Trcross();
         Trcirc();
-    }
 
+    }
+ 
     let TrocaDeTurno = () => {
         CirculoTurno = !CirculoTurno;
 
-        board.classList.remove("cross");
         board.classList.remove("circ");
+        board.classList.remove("cross");
+
         if (CirculoTurno) {
-            board.classList.add('circ');Marcar();
+            board.classList.add('circ');
         } else {
-            board.classList.add('cross');Marcar();
+            board.classList.add('cross');
         };
+       if (document.querySelector('.board').addEventListener('click', Marcar())){}
     };
+
+
     if (document.querySelector('.board').addEventListener('click', function () {
         TrocaDeTurno();
-        Marcar();
-    }))
-
-
-        //
-
-
-        /*
-            if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function () {
-                board.classList.remove('circ');
-                board.classList.add('cross');
-                if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function () {
-                    board.classList.remove('cross');
-                    board.classList.add('circ');
-                    if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function () {
-                        board.classList.remove('circ');
-                        board.classList.add('cross');
-                        if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function () {
-                            board.classList.remove('cross');
-                            board.classList.add('circ');
-                            if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function () {
-                                board.classList.remove('circ');
-                                board.classList.add('cross');
-                                if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function () {
-                                    board.classList.remove('cross');
-                                    board.classList.add('circ');
-                                    if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function () {
-                                        board.classList.remove('circ');
-                                        board.classList.add('cross');
-                                        if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function () {
-                                            board.classList.remove('cross');
-                                            board.classList.add('circ');
-                                            if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function () {
-                                                board.classList.remove('circ');
-                                                board.classList.add('cross');
-                                                if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function () {
-                                                    board.classList.remove('cross');
-                                                    board.classList.add('circ');
-                                                })) { }
-                                            })) { }
-                                        })) { }
-                                    })) { }
-                                })) { }
-                            })) { }
-                        })) { }
-                    })) { }
-                })) { }
-            })) { } 
-            
-           
-            if (board.classList.contains('circ') && document.querySelector('.board').addEventListener('click', function() {
-                    board.classList.add('cross');
-                    board.classList.remove('circ');
-                }))
-            if (board.classList.contains('cross') && document.querySelector('.board').addEventListener('click', function() {
-                board.classList.remove('cross');
-                board.classList.add('circ');
-                
-            }))
-            */
+        
+    })){}
 
 
         var vez = 'cric';
