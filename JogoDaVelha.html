@@ -140,12 +140,10 @@
     var player = 1;
 
     let CirculoTurno = false;
-    const Marcar = () => {
+    function Marcar(){
         Trcross();
         Trcirc();
-
     }
- 
     let TrocaDeTurno = () => {
         CirculoTurno = !CirculoTurno;
 
@@ -157,7 +155,7 @@
         } else {
             board.classList.add('cross');
         };
-       if (document.querySelector('.board').addEventListener('click', Marcar())){}
+       
     };
 
 
