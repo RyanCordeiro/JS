@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>JSon</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response=>response.json()).then(json=>console.log(json));
+        
+    </script>
+    
+</body>

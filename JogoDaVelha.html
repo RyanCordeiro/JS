@@ -5,15 +5,15 @@
 
     <title>Cursor movimento</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="">
     <!--===============================================================================================-->
 
 </head>
 
 
 <body>
-    <div class="board cross">
-        <div class="box" id="b"></div>
+    <div class="board circ">
+        <div class="box " id="b"></div>
         <div class="box" id="b"></div>
         <div class="box" id="b"></div>
 
@@ -24,18 +24,41 @@
         <div class="box" id="b"></div>
         <div class="box" id="b"></div>
         <div class="box" id="b"></div>
+        <br>
+        <div class="btn inicio">Iniciar</div>
     </div>
-    <br>
-    <div class="box cross" src="Screenshot_12.png"></div>
+
     <br>
     <div class="circ"></div>
 
 
-    <h1> teste
+    <h1> click no quadrado para começar
         <script></script>
     </h1>
     <style>
-        body {}
+        body {
+
+
+            font-size: 120%;
+            padding-top: 5%;
+            text-align: center;
+        }
+
+        .btn.inicio {
+            background-color: yellowgreen;
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-Radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+        }
+
 
         .box.cross::after,
         .box.cross::before,
@@ -77,13 +100,15 @@
 
         .board {
             display: grid;
-            width: 100%;
+            width: 6%;
             height: 100%;
             justify-items: center;
             align-items: center;
             justify-content: center;
             align-content: center;
-
+            margin-left: auto;
+            margin-right: auto;
+            background-color: yellow;
             grid-template-columns: repeat(3, auto);
         }
 
@@ -113,21 +138,11 @@
     for (var i = 0; i < elementos.length; i++) {
         var el = elementos[i];
 
-        //////////  varieavies para randomizar cores)   /////////////////////////
-        ////////    FIM (varieavies para randomizar cores)  /////////////////////////
-
-        ////////    iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS /////////////
-
-        /////////       FIM (iMPOSSIBILITANDO DE SAIR QUADRADOS BRANCOS) ////////
-
-        ///////////                     STYLES                  ////////
-
+      
 
         el.style.backgroundColor = '#d3d3d3';
 
     };
-
-    ////////                     FIM (STYLES)               /////////////
 
     /////////        FIM (LOOP)         /////////
 
@@ -140,10 +155,20 @@
     var player = 1;
 
     let CirculoTurno = false;
-    function Marcar(){
+
+    function Win(){
+      if(wins2.classList.contains('circ')){ alert('aa')};
+   
+    };
+    function MarcarX() {
         Trcross();
-        Trcirc();
+
     }
+    function MarcarC() {
+        Trcirc();
+
+    }
+
     let TrocaDeTurno = () => {
         CirculoTurno = !CirculoTurno;
 
@@ -152,20 +177,21 @@
 
         if (CirculoTurno) {
             board.classList.add('circ');
+            MarcarC();
         } else {
             board.classList.add('cross');
+            MarcarX();
         };
-       
+        Win();
     };
 
 
     if (document.querySelector('.board').addEventListener('click', function () {
         TrocaDeTurno();
-        
-    })){}
+
+    })) { }
 
 
-        var vez = 'cric';
     let linha = [
 /*               0             1               2            */
 /* 0 */[elementos[0], elementos[1], elementos[2]],
@@ -177,47 +203,51 @@
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
             linhas[0][0].classList.add('circ');
             linhas[0][0].classList.remove('cross');
-            console.log(player + 1);
+           
+        })) { } else if (board.classList.contains('cross') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
+            linhas[0][0].classList.add('cross');
+            linhas[0][0].classList.remove('circ');
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[1].addEventListener('click', function () {
             linhas[0][1].classList.add('circ');
             linhas[0][1].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[2].addEventListener('click', function () {
             linhas[0][2].classList.add('circ');
             linhas[0][2].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[3].addEventListener('click', function () {
             linhas[1][0].classList.add('circ');
             linhas[1][0].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[4].addEventListener('click', function () {
             linhas[1][1].classList.add('circ');
             linhas[1][1].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[5].addEventListener('click', function () {
             linhas[1][2].classList.add('circ');
             linhas[1][2].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[6].addEventListener('click', function () {
             linhas[2][0].classList.add('circ');
             linhas[2][0].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[7].addEventListener('click', function () {
             linhas[2][1].classList.add('circ');
             linhas[2][1].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[8].addEventListener('click', function () {
             linhas[2][2].classList.add('circ');
             linhas[2][2].classList.remove('cross');
-            console.log(player + 1);
+           
         }));
     }
     //                                  cross                      // 
@@ -225,47 +255,47 @@
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
             linhas[0][0].classList.add('cross');
             linhas[0][0].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[1].addEventListener('click', function () {
             linhas[0][1].classList.add('cross');
             linhas[0][1].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[2].addEventListener('click', function () {
             linhas[0][2].classList.add('cross');
             linhas[0][2].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[3].addEventListener('click', function () {
             linhas[1][0].classList.add('cross');
             linhas[1][0].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[4].addEventListener('click', function () {
             linhas[1][1].classList.add('cross');
             linhas[1][1].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[5].addEventListener('click', function () {
             linhas[1][2].classList.add('cross');
             linhas[1][2].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[6].addEventListener('click', function () {
             linhas[2][0].classList.add('cross');
             linhas[2][0].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[7].addEventListener('click', function () {
             linhas[2][1].classList.add('cross');
             linhas[2][1].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[8].addEventListener('click', function () {
             linhas[2][2].classList.add('cross');
             linhas[2][2].classList.remove('circ');
-            console.log(player + 2);
+            
         }));
     }
 
@@ -277,18 +307,27 @@
 /* 1 */[elementos[3], elementos[4], elementos[5]],
 /* 2 */[elementos[6], elementos[7], elementos[8]],
     ];
-    const wins = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [1, 5, 9],
-        [3, 5, 7],
-        [1, 4, 7],
-        [2, 5, 8],
-        [3, 6, 9]
-    ];
-    console.log(wins)
 
+    const wins2 = [
+    [elementos[0], elementos[1], elementos[2]]
+    ];
+    const wins = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8]
+    ];
+    /*
+    function test(...wins) {
+        console.log(wins)
+    }
+    test(wins);
+    console.log(linhas);
+*/
 
 </script>
 
