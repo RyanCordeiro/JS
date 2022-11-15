@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Cursor movimento</title>
+    <title>Jogo Da Velha</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="">
     <!--===============================================================================================-->
@@ -108,7 +108,7 @@
             align-content: center;
             margin-left: auto;
             margin-right: auto;
-            background-color: yellow;
+            background-color: rgb(255, 255, 255);
             grid-template-columns: repeat(3, auto);
         }
 
@@ -138,7 +138,7 @@
     for (var i = 0; i < elementos.length; i++) {
         var el = elementos[i];
 
-      
+
 
         el.style.backgroundColor = '#d3d3d3';
 
@@ -156,9 +156,68 @@
 
     let CirculoTurno = false;
 
-    function Win(){
-      if(wins2.classList.contains('circ')){ alert('aa')};
-   
+
+
+
+    function Win() {
+        // horizontal O
+        if ((wins2[0][0]).classList.contains('circ') && (wins2[0][1]).classList.contains('circ') && (wins2[0][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        if ((wins2[1][0]).classList.contains('circ') && (wins2[1][1]).classList.contains('circ') && (wins2[1][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        if ((wins2[2][0]).classList.contains('circ') && (wins2[2][1]).classList.contains('circ') && (wins2[2][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        };
+        // horizontal X
+        if ((wins2[0][0]).classList.contains('cross') && (wins2[0][1]).classList.contains('cross') && (wins2[0][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X Venceu!')
+        }
+        if ((wins2[1][0]).classList.contains('cross') && (wins2[1][1]).classList.contains('cross') && (wins2[1][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X Venceu!')
+        }
+        if ((wins2[2][0]).classList.contains('cross') && (wins2[2][1]).classList.contains('cross') && (wins2[2][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X Venceu!')
+        };
+
+
+        // vertical O
+        if ((wins2[0][0]).classList.contains('circ') && (wins2[1][0]).classList.contains('circ') && (wins2[2][0]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        if ((wins2[0][1]).classList.contains('circ') && (wins2[1][1]).classList.contains('circ') && (wins2[2][1]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        if ((wins2[0][2]).classList.contains('circ') && (wins2[1][2]).classList.contains('circ') && (wins2[2][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        };
+        // vertical  X
+        if ((wins2[0][0]).classList.contains('cross') && (wins2[1][0]).classList.contains('cross') && (wins2[2][0]).classList.contains('cross')) {
+            alert('Fim de Jogo X venceu!')
+        }
+        if ((wins2[0][1]).classList.contains('cross') && (wins2[1][1]).classList.contains('cross') && (wins2[2][1]).classList.contains('cross')) {
+            alert('Fim de Jogo X venceu!')
+        }
+        if ((wins2[0][2]).classList.contains('cross') && (wins2[1][2]).classList.contains('cross') && (wins2[2][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X venceu!')
+        };
+
+        //diagonal O
+        if ((wins2[0][0]).classList.contains('circ') && (wins2[1][1]).classList.contains('circ') && (wins2[2][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        if ((wins2[2][0]).classList.contains('circ') && (wins2[1][1]).classList.contains('circ') && (wins2[0][2]).classList.contains('circ')) {
+            alert('Fim de Jogo Bolinha venceu!')
+        }
+        //diagonal X
+        if ((wins2[0][0]).classList.contains('cross') && (wins2[1][1]).classList.contains('cross') && (wins2[2][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X venceu!')
+        }
+        if ((wins2[2][0]).classList.contains('cross') && (wins2[1][1]).classList.contains('cross') && (wins2[0][2]).classList.contains('cross')) {
+            alert('Fim de Jogo X venceu!')
+        }
+
     };
     function MarcarX() {
         Trcross();
@@ -203,51 +262,51 @@
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
             linhas[0][0].classList.add('circ');
             linhas[0][0].classList.remove('cross');
-           
+
         })) { } else if (board.classList.contains('cross') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
             linhas[0][0].classList.add('cross');
             linhas[0][0].classList.remove('circ');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[1].addEventListener('click', function () {
             linhas[0][1].classList.add('circ');
             linhas[0][1].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[2].addEventListener('click', function () {
             linhas[0][2].classList.add('circ');
             linhas[0][2].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[3].addEventListener('click', function () {
             linhas[1][0].classList.add('circ');
             linhas[1][0].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[4].addEventListener('click', function () {
             linhas[1][1].classList.add('circ');
             linhas[1][1].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[5].addEventListener('click', function () {
             linhas[1][2].classList.add('circ');
             linhas[1][2].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[6].addEventListener('click', function () {
             linhas[2][0].classList.add('circ');
             linhas[2][0].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[7].addEventListener('click', function () {
             linhas[2][1].classList.add('circ');
             linhas[2][1].classList.remove('cross');
-           
+
         }));
         if (board.classList.contains('circ') && document.querySelectorAll('.box')[8].addEventListener('click', function () {
             linhas[2][2].classList.add('circ');
             linhas[2][2].classList.remove('cross');
-           
+
         }));
     }
     //                                  cross                      // 
@@ -255,47 +314,47 @@
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[0].addEventListener('click', function () {
             linhas[0][0].classList.add('cross');
             linhas[0][0].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[1].addEventListener('click', function () {
             linhas[0][1].classList.add('cross');
             linhas[0][1].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[2].addEventListener('click', function () {
             linhas[0][2].classList.add('cross');
             linhas[0][2].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[3].addEventListener('click', function () {
             linhas[1][0].classList.add('cross');
             linhas[1][0].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[4].addEventListener('click', function () {
             linhas[1][1].classList.add('cross');
             linhas[1][1].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[5].addEventListener('click', function () {
             linhas[1][2].classList.add('cross');
             linhas[1][2].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[6].addEventListener('click', function () {
             linhas[2][0].classList.add('cross');
             linhas[2][0].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[7].addEventListener('click', function () {
             linhas[2][1].classList.add('cross');
             linhas[2][1].classList.remove('circ');
-            
+
         }));
         if (board.classList.contains('cross') && document.querySelectorAll('.box')[8].addEventListener('click', function () {
             linhas[2][2].classList.add('cross');
             linhas[2][2].classList.remove('circ');
-            
+
         }));
     }
 
@@ -308,9 +367,17 @@
 /* 2 */[elementos[6], elementos[7], elementos[8]],
     ];
 
-    const wins2 = [
-    [elementos[0], elementos[1], elementos[2]]
+    let wins2 = [
+        [elementos[0], elementos[1], elementos[2]],
+        [elementos[3], elementos[4], elementos[5]],
+        [elementos[6], elementos[7], elementos[8]],
+        [elementos[0], elementos[4], elementos[8]],
+        [elementos[2], elementos[4], elementos[6]],
+        [elementos[0], elementos[3], elementos[6]],
+        [elementos[1], elementos[4], elementos[7]],
+        [elementos[2], elementos[5], elementos[8]]
     ];
+
     const wins = [
         [0, 1, 2],
         [3, 4, 5],

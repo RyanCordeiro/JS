@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>Cursor movimento</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/form.css">
+    <!--===============================================================================================-->
+
+</head>
+<style>
+    .container {
+        margin-left: -18%;
+        position: relative;
+        height: 500px;
+
+    }
+
+    .container img {
+        
+        position: absolute;
+        left: auto;
+        top: auto;
+        width: 100;
+        opacity: 0;
+        transition: 1s;
+        border-radius: 10px;
+    }
+
+    .bullets {
+        text-align: center;
+    }
+
+    .bullet-single {
+        margin: 0 8px;
+        cursor: pointer;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #ccc;
+
+
+    }
+
+    .active-bullet {
+        background-color: rgb(90, 90, 90);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img style="opacity:1;" src="https://picsum.photos/id/280/200/300"></img>
+        <img src="https://picsum.photos/id/282/200/300"></img>
+        <img src="https://picsum.photos/id/283/200/300"></img>
+    </div>
+    <div class="bullets">
+        <div class="bullet-single active-bullet"></div>
+        <div class="bullet-single"></div>
+        <div class="bullet-single"></div>
+    </div>
+    <h1> teste </h1>
+</body>
+<script>
+
+    var lastIndex = 0;
+    var images = document.querySelectorAll('.container img');
+
+    images.forEach((item, index) => {
+        document.querySelectorAll('.bullet-single')[index].addEventListener('click', () => {
+            let lastImage = document.querySelectorAll('.container img')[lastIndex];
+            let actualImage = document.querySelectorAll('.container img')[index];
+
+            // reseta o bullet e bota o outro
+            document.querySelectorAll('.bullet-single')[lastIndex]
+            .classList.remove('active-bullet')
+            ;
+            document.querySelectorAll('.bullet-single')[index]
+            .classList.add('active-bullet')
+            ;
+
+            lastImage.style.opacity = 0;
+            actualImage.style.opacity = 1;
+            lastIndex = index;
+        })
+    });
+
+</script>
+
+</html>

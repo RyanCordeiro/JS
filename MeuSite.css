@@ -1,0 +1,72 @@
+
+    body {
+        text-align: center;
+    }
+/**/
+header a{
+    text-align: center;
+    font-size: 400%;
+    font-family:fantasy;
+}
+header div{
+    transition: 1s;
+    color: #6c5ce7
+
+}
+    .box {
+        overflow: hidden;
+        transition: 1s !important;
+        margin-top: 50px;
+        width: 50px;
+        height: 50px;
+        background-color: aqua;
+
+        border-radius: "20px";
+        display: "inline-block";
+    }
+/**/
+    .btn {
+
+        margin-bottom: 10px;
+        margin-right: 10px;
+
+        width: 50px;
+        height: 20px;
+        background-color: rgb(143, 143, 143);
+        cursor: pointer;
+        border-radius: 20px;
+        position: fixed;
+        z-index: 1000;
+        right: 1rem;
+        bottom: 1rem;
+    }
+/*///////////////////// CORES ///////////////////////////*/
+    .bright {
+        color:rgb(58, 58, 58);
+        overflow: hidden;
+        background-color: rgb(247, 247, 247);
+        transition: 1s !important;
+
+    }
+
+    .dark {
+        
+        color:rgb(243, 243, 243);
+        overflow: hidden;
+        transition: 1s !important;
+        background-color: rgb(54, 54, 54);
+    }
+/**/
+div nav{
+    
+}
+    nav a{
+        left:-10px;
+        background-color: aqua;
+        text-align: center;
+    }
+
+    nav ul{
+        list-style-type: none;
+        gap: 10px;
+    }
