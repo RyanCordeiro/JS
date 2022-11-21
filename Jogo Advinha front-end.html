@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>jogo de advinhação</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <!--===============================================================================================-->
+</head>
+<script>
+
+    var NR = Math.round(Math.random() * 101);
+
+    console.log(NR);
+
+</script>
+<style>
+    body {
+        background-color: #808080;
+    }
+</style>
+
+<body>
+    <p> Jogo De Adivinhe o numero</p>
+    <p>selecione a dificuldade</p>
+    <button id="facil">Fácil</button>
+    <button id="medio">Médio</button>
+    <button id="dificil">Díficil</button>
+    <br>
+    <br>
+    <br>
+    <div>
+        <input class="xxx" type="number" id="xxx" placeholder="Numero entre 0 e 100" value=""></input>
+        <br>
+        <button type="submit" id="enviar">enviar</button>
+    </div>
+    <script type=""></script><br>
+</body>
+<script>
+    if (document.getElementById('facil').addEventListener('click', function () {
+
+        var tentativas = 20;
+        alert("você escolheu facil, tera " + tentativas + " tentativas")
+        var tentAtu = 1;
+        
+
+        if (document.getElementById('enviar').addEventListener('click', function () {
+            var resp = document.querySelector("input").value;
+            if (resp < 101) {
+                console.log(resp);
+                if (resp == NR) { alert('acertou!! em ' + tentAtu + ' tentativas') } else { alert('Voce errou! Tente novamente Jogada ' + tentAtu + " de " + tentativas); tentAtu++; }
+                console.log(tentAtu)
+                if (tentativas == tentAtu) { alert('Que pena, Você perdeu!  ' + 'Numero Secreto: ' + NR + " Fim de jogo") }
+                if (resp < NR) { alert("Tente um numero maior") }
+                if (resp > NR) { alert("Tente um numeor menor") }
+
+
+
+            } else { alert('Digite um numero Valido') }
+        }));
+
+    }));
+    if (document.getElementById('medio').addEventListener('click', function () {
+
+        var tentativas = 10
+        alert("Você escolheu médio, tera " + tentativas + " tentaivas")
+        var tentAtu = 1;
+
+        if (document.getElementById('enviar').addEventListener('click', function () {
+            var resp = document.querySelector("input").value;
+            if (resp < 101) {
+                console.log(resp);
+                if (resp == NR) { alert('acertou!! em ' + tentAtu + ' tentativas') } else { alert('Voce errou! Tente novamente Jogada ' + tentAtu + " de " + tentativas); tentAtu++; }
+                console.log(tentAtu)
+                if (tentativas == tentAtu) { alert('Que pena, Você perdeu!  ' + 'Numero Secreto: ' + NR + " Fim de jogo") }
+                if (resp < NR) { alert("Tente um numero maior") }
+                if (resp > NR) { alert("Tente um numeor menor") }
+            } else { alert('Digite um numero Valido') }
+        }));
+
+
+    }));
+    if (document.getElementById('dificil').addEventListener('click', function () {
+
+        var tentativas = 5;
+        alert("Você escolheu dificil, tera " + tentativas + " tentaivas")
+        var tentAtu = 1;
+
+        if (document.getElementById('enviar').addEventListener('click', function () {
+            var resp = document.querySelector("input").value;
+            if (resp < 101) {
+                console.log(resp);
+                if (resp == NR) { alert('acertou!! em ' + tentAtu + ' tentativas') } else { alert('Voce errou! Tente novamente Jogada ' + tentAtu + " de " + tentativas); tentAtu++; }
+                console.log(tentAtu)
+                if (tentativas == tentAtu) { alert('Que pena, Você perdeu!  ' + 'Numero Secreto: ' + NR + " Fim de jogo") }
+                if (resp < NR) { alert("Tente um numero maior") }
+                if (resp > NR) { alert("Tente um numeor menor") }
+            } else { alert('Digite um numero Valido') }
+        }));
+
+
+    }));
+
+</script>
