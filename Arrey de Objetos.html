@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <title>Objetos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="form.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <script>
+        //exemplo de objeto de lista de pessoas
+        var objeto = [{
+            'nome':'ryan',
+            'senha': '30320417',
+            'celular': '992511695',
+            'instagram': '_ryan_cordeiro_',
+            'equipe': 'charlie',
+            'idade': '19',
+            'profissão': 'programador'
+        },{
+            'nome':'eliza',
+            'senha': 'eliza09052002',
+            'celular': '982317958',
+            'instagram': 'eliza_machado__',
+            'equipe': 'charlie',
+            'idade': '19',
+            'profissão': 'RH'
+        },{
+            'nome':'Astolfo',
+            'senha': 'AstolfoComedorDeRepohlho',
+            'celular': '',
+            'instagram': 'Astolfo',
+            'equipe': 'bravo',
+            'idade': '20',
+            'profissão': 'Designer'
+        },{
+            'nome':'Rogerio',
+            'senha': 'Rogerio',
+            'celular': '',
+            'instagram': 'Rogerio',
+            'equipe': 'delta',
+            'idade': '26',
+            'profissão': 'programador'
+        },{
+            'nome':'ryan',
+            'senha': '30320417',
+            'celular': '992511695',
+            'instagram': '_ryan_cordeiro_',
+            'equipe': 'charlie',
+            'idade': '19',
+            'profissão': 'programador'
+        }]
+        //alert(objeto[0].nome);
+        //exemplo de objeto de site de noticias
+        var noticias = [{
+            'titulo':'ryan',
+            'conteudo': "Sou uma pessoa que desde a infância sempre teve uma paixão por computadores e interesse em analisar e compreender como cada máquina funciona, por isso um dos primeiros cursos que fiz foi na área de manutenção e configuração de computadores. Desde então, apenas aumentou esse meu gosto e hoje curso técnico em informática visando mais tarde adentrar uma faculdade. Ainda antes de iniciar meu técnico, já gostava de programar jogos como passatempo, e então descobri o que eu gostaria de fazer para o resto da minha vida: desenvolver sistemas, web, jogos, aprender novas linguagens de programação e afins, sempre buscando uma maior experiência pessoal.",
+            'data': '12/06/21'
+        },{
+            'titulo':'eliza',
+            'conteudo': 19,
+            'data': '26/04/22'
+        }]
+        //alert(noticias[0].conteudo);
+        for(i=0; i<2; i++){}
+
+        let novo = {function(){new objeto[{'nome':'test'}]}}
+
+        var FindeIdade = objeto.filter(o => o.idade.includes(19));
+        
+        var FindeNome = objeto.filter(o => o.nome.includes('ryan'));
+
+        console.log(objeto);
+    </script>
+    
+</body>
